@@ -1,1 +1,64 @@
-<p>{{ 'terms' | transloco }}</p>
+<h1>Dynamic Translations Demo</h1>
+
+<p>
+  This is a demo of the dynamic translation component. Find out more about it in
+  my blog post
+  <i>
+    <a href="https://sandroroth.com/blog/angular-dynamic-translations">
+      Dynamic Translations: How to inject HTML and Angular Components into your
+      translations
+    </a>
+  </i>
+</p>
+
+<hr />
+<h2>Single slot</h2>
+
+<p [appDynamicTranslation]="'demo-link' | transloco">
+  <a href="#terms" *appDynamicTranslationSlot="'termsLink'; let text">{{
+    text
+  }}</a>
+</p>
+
+<hr />
+<h2>Two slots</h2>
+
+<p [appDynamicTranslation]="'demo-two-links' | transloco">
+  <a href="#terms" *appDynamicTranslationSlot="'termsLink'; let text">{{
+    text
+  }}</a>
+  <a href="#privacy" *appDynamicTranslationSlot="'privacyLink'; let text">{{
+    text
+  }}</a>
+</p>
+
+<hr />
+<h2>Button with click handler</h2>
+
+<p [appDynamicTranslation]="'demo-button' | transloco">
+  <button
+    *appDynamicTranslationSlot="'settings'; let text"
+    (click)="openSettingsModal()"
+  >
+    {{ text }}
+  </button>
+</p>
+
+<hr />
+<h2>Icon</h2>
+
+<p [appDynamicTranslation]="'demo-icon' | transloco">
+  <span
+    *appDynamicTranslationSlot="'icon'; let iconName"
+    class="material-icons"
+  >
+    {{ iconName }}
+  </span>
+</p>
+
+<hr />
+<h2>Components</h2>
+
+<p [appDynamicTranslation]="'demo-component' | transloco">
+  <app-example *appDynamicTranslationSlot="'component'"></app-example>
+</p>

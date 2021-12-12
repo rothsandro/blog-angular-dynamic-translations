@@ -1,3 +1,7 @@
 {
-  "terms": "I accept the terms."
+  "demo-link": "I accept the [[termsLink:terms]].",
+  "demo-two-links": "I accept the [[termsLink:terms]] and [[privacyLink:privacy policy]].",
+  "demo-button": "You can [[settings:update your settings]] at any time.",
+  "demo-icon": "Click on the [[icon:settings]] to edit your settings.",
+  "demo-component": "You can include Angular Components like [[component]] into your translation."
 }
